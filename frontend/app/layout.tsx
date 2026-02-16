@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: "Advanced parking management by JMRS",
 };
 
+import Navbar from "@/components/layout/Navbar";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,20 +19,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <header className="fixed top-0 w-full z-50 glass">
-          <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-parking-gold rounded-sm transform rotate-45 rotate-3D"></div>
-              <span className="text-xl font-bold tracking-tighter text-parking-gold">JMRS <span className="text-white font-light">PARKINGS</span></span>
-            </div>
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#" className="nav-link">Dashboard</a>
-              <a href="#" className="nav-link">Abonados</a>
-              <a href="#" className="nav-link">BI Reports</a>
-              <button className="btn-gold">Acceso Personal</button>
-            </div>
-          </nav>
-        </header>
+        <Navbar />
         <main className="pt-32 min-h-screen px-6">
           <div className="max-w-7xl mx-auto">
             {children}

@@ -24,3 +24,11 @@ export interface Estacion {
   codigoEstacion: string;
   estadoActual: 'L' | 'O' | 'M';
 }
+
+export interface Factura {
+  idFactura: number;
+  numeroFactura: string;
+  fechaEmision: string;
+  totalFactura: number;
+  pagoConfirmado: boolean;
+}
