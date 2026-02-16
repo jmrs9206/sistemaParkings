@@ -2,8 +2,7 @@ package com.jmrs.gestionparkings.controller;
 
 import com.jmrs.gestionparkings.model.BIDeudaAbonado;
 import com.jmrs.gestionparkings.model.BIEficienciaPlaza;
-import com.jmrs.gestionparkings.repository.BIDeudaRepository;
-import com.jmrs.gestionparkings.repository.BIEficienciaRepository;
+import com.jmrs.gestionparkings.service.BIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,16 +16,15 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 public class BIController {
 
-    private final BIDeudaRepository deudaRepository;
-    private final BIEficienciaRepository eficienciaRepository;
+    private final BIService biService;
 
     @GetMapping("/debts")
     public List<BIDeudaAbonado> getSubscriberDebts() {
-        return deudaRepository.findAll();
+        return biService.getSubscriberDebts();
     }
 
     @GetMapping("/efficiency")
     public List<BIEficienciaPlaza> getSpotEfficiency() {
-        return eficienciaRepository.findAll();
+        return biService.getSpotEfficiency();
     }
 }
