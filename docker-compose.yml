@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: parking-db
+    restart: always
+    environment:
+      POSTGRES_USER: user_parking
+      POSTGRES_PASSWORD: password_parking
+      POSTGRES_DB: gestion_parkings
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d # Auto-init with modular schema
+    networks:
+      - parking-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: parking-backend
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/gestion_parkings
+      SPRING_DATASOURCE_USERNAME: user_parking
+      SPRING_DATASOURCE_PASSWORD: password_parking
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - parking-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: parking-frontend
+    restart: always
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8080/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - parking-network
+
+networks:
+  parking-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
