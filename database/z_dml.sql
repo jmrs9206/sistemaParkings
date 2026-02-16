@@ -11,9 +11,9 @@ INSERT INTO LOCALIDADES (nombre, id_provincia) VALUES ('Madrid', 1), ('Barcelona
 INSERT INTO CATEGORIAS_VEHICULOS (nombre) VALUES ('Turismo'), ('Motocicleta');
 -- Catálogo de métodos de pago con su comportamiento recurrente o puntual.
 INSERT INTO METODOS_PAGO (nombre_metodo, tipo_cobro) VALUES 
-('Tarjeta', 'PUNTUAL'),        -- Para cobros en ventanilla/app.
-('IBAN', 'RECURRENTE'),        -- Para cuotas de abono mensuales.
-('Efectivo', 'PUNTUAL');       -- Para máquinas de cobro físicas.
+('CONTACTLESS', 'PUNTUAL'),    -- Para cobros en ventanilla/app.
+('DOMICILIADO', 'RECURRENTE'), -- Para cuotas de abono mensuales.
+('EFECTIVO', 'PUNTUAL');       -- Para máquinas de cobro físicas.
 
 -- 2. INFRAESTRUCTURA: Definición física de los parkings.
 INSERT INTO PARKINGS (nombre, id_localidad) VALUES ('Parking Centro Sol', 1); -- Parking principal.
@@ -34,9 +34,9 @@ INSERT INTO TARIFAS_PARKING (id_tarifa_base, id_parking, precio_minuto, precio_m
 (2, 1, 0.02, 100.00);   -- 100€/mes + 0,02€/min de exceso (si aplica) para abonados.
 
 -- 4. ABONADOS Y CONTRATOS: Perfiles de clientes de larga estancia.
-INSERT INTO ABONADOS (nombre_razon_social, dni_cif, email, id_localidad) VALUES 
-('Juan Pérez', '12345678X', 'juan@email.com', 1),                -- Cliente estándar OK.
-('Abonado Sin Pago', '00000000E', 'error@email.com', 1);         -- Cliente para test de errores.
+INSERT INTO ABONADOS (nombre_razon_social, dni_cif, email, id_localidad, id_parking, matricula_principal, codigo_abonado) VALUES 
+('Juan Pérez', '12345678X', 'juan@email.com', 1, 1, '1234-BBB', 'PHX-01-240101-0001'),
+('Abonado Sin Pago', '00000000E', 'error@email.com', 1, 1, '0000-BAD', 'PHX-01-240101-0002');
 
 -- Juan registra su domiciliación SEPA (Metodo 2: IBAN).
 INSERT INTO DATOS_PAGO_ABONADO (id_abonado, id_metodo_pago, token_pasarela, es_metodo_por_defecto) 

@@ -1,0 +1,117 @@
+@options
+@packages
+-classpath
+'/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.2/spring-boot-starter-data-jpa-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.2/spring-boot-starter-aop-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/spring-aop/6.1.3/spring-aop-6.1.3.jar:/home/jmrs/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.2/spring-boot-starter-jdbc-3.2.2.jar:/home/jmrs/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/home/jmrs/.m2/repository/org/springframework/spring-jdbc/6.1.3/spring-jdbc-6.1.3.jar:/home/jmrs/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar:/home/jmrs/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/jmrs/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/jmrs/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/home/jmrs/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/home/jmrs/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/home/jmrs/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/jmrs/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/jmrs/.m2/repository/org/springframework/data/spring-data-jpa/3.2.2/spring-data-jpa-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/data/spring-data-commons/3.2.2/spring-data-commons-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/spring-orm/6.1.3/spring-orm-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-context/6.1.3/spring-context-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-tx/6.1.3/spring-tx-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-beans/6.1.3/spring-beans-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-core/6.1.3/spring-core-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-jcl/6.1.3/spring-jcl-6.1.3.jar:/home/jmrs/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/jmrs/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar:/home/jmrs/.m2/repository/org/springframework/spring-aspects/6.1.3/spring-aspects-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.2/spring-boot-starter-web-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.2/spring-boot-starter-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot/3.2.2/spring-boot-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.2/spring-boot-autoconfigure-3.2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.2/spring-boot-starter-logging-3.2.2.jar:/home/jmrs/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/home/jmrs/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/jmrs/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/home/jmrs/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/home/jmrs/.m2/repository/org/slf4j/jul-to-slf4j/2.0.11/jul-to-slf4j-2.0.11.jar:/home/jmrs/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.2/spring-boot-starter-json-3.2.2.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.2/spring-boot-starter-tomcat-3.2.2.jar:/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.18/tomcat-embed-core-10.1.18.jar:/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.18/tomcat-embed-websocket-10.1.18.jar:/home/jmrs/.m2/repository/org/springframework/spring-web/6.1.3/spring-web-6.1.3.jar:/home/jmrs/.m2/repository/io/micrometer/micrometer-observation/1.12.2/micrometer-observation-1.12.2.jar:/home/jmrs/.m2/repository/io/micrometer/micrometer-commons/1.12.2/micrometer-commons-1.12.2.jar:/home/jmrs/.m2/repository/org/springframework/spring-webmvc/6.1.3/spring-webmvc-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/spring-expression/6.1.3/spring-expression-6.1.3.jar:/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.2/spring-boot-starter-validation-3.2.2.jar:/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.18/tomcat-embed-el-10.1.18.jar:/home/jmrs/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/home/jmrs/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar:/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar:/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar:/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar:/home/jmrs/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar:/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar:/home/jmrs/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar:/home/jmrs/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+17
+-sourcepath
+'/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'gestion-parkings 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'gestion-parkings 0.0.1-SNAPSHOT API'
+com.jmrs.gestionparkings.exception
+com.jmrs.gestionparkings.dto
+com.jmrs.gestionparkings.mapper
+com.jmrs.gestionparkings.repository
+com.jmrs.gestionparkings.model
+com.jmrs.gestionparkings.controller
+com.jmrs.gestionparkings.service
+com.jmrs.gestionparkings
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.2/spring-boot-starter-data-jpa-3.2.2.jar = 1771254336005
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.2/spring-boot-starter-aop-3.2.2.jar = 1771254336029
+/home/jmrs/.m2/repository/org/springframework/spring-aop/6.1.3/spring-aop-6.1.3.jar = 1771254336052
+/home/jmrs/.m2/repository/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar = 1771254336256
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.2/spring-boot-starter-jdbc-3.2.2.jar = 1771254336051
+/home/jmrs/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar = 1771254336137
+/home/jmrs/.m2/repository/org/springframework/spring-jdbc/6.1.3/spring-jdbc-6.1.3.jar = 1771254336183
+/home/jmrs/.m2/repository/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar = 1771254336929
+/home/jmrs/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar = 1771254336213
+/home/jmrs/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar = 1771254336258
+/home/jmrs/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar = 1771254336298
+/home/jmrs/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar = 1771254336336
+/home/jmrs/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar = 1771254336499
+/home/jmrs/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar = 1771254336481
+/home/jmrs/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar = 1771254336938
+/home/jmrs/.m2/repository/org/springframework/data/spring-data-jpa/3.2.2/spring-data-jpa-3.2.2.jar = 1771254337026
+/home/jmrs/.m2/repository/org/springframework/data/spring-data-commons/3.2.2/spring-data-commons-3.2.2.jar = 1771254337241
+/home/jmrs/.m2/repository/org/springframework/spring-orm/6.1.3/spring-orm-6.1.3.jar = 1771254337062
+/home/jmrs/.m2/repository/org/springframework/spring-context/6.1.3/spring-context-6.1.3.jar = 1771254337266
+/home/jmrs/.m2/repository/org/springframework/spring-tx/6.1.3/spring-tx-6.1.3.jar = 1771254337267
+/home/jmrs/.m2/repository/org/springframework/spring-beans/6.1.3/spring-beans-6.1.3.jar = 1771254337452
+/home/jmrs/.m2/repository/org/springframework/spring-core/6.1.3/spring-core-6.1.3.jar = 1771254337502
+/home/jmrs/.m2/repository/org/springframework/spring-jcl/6.1.3/spring-jcl-6.1.3.jar = 1771254337332
+/home/jmrs/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar = 1771254337400
+/home/jmrs/.m2/repository/org/slf4j/slf4j-api/2.0.11/slf4j-api-2.0.11.jar = 1771254337491
+/home/jmrs/.m2/repository/org/springframework/spring-aspects/6.1.3/spring-aspects-6.1.3.jar = 1771254337524
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.2/spring-boot-starter-web-3.2.2.jar = 1771254337517
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.2/spring-boot-starter-3.2.2.jar = 1771254337542
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot/3.2.2/spring-boot-3.2.2.jar = 1771254337692
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.2/spring-boot-autoconfigure-3.2.2.jar = 1771254337764
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.2/spring-boot-starter-logging-3.2.2.jar = 1771254337571
+/home/jmrs/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar = 1771254337657
+/home/jmrs/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar = 1771254337746
+/home/jmrs/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar = 1771254337944
+/home/jmrs/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar = 1771254337812
+/home/jmrs/.m2/repository/org/slf4j/jul-to-slf4j/2.0.11/jul-to-slf4j-2.0.11.jar = 1771254337787
+/home/jmrs/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar = 1771254337834
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.2/spring-boot-starter-json-3.2.2.jar = 1771254337829
+/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar = 1771254338143
+/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar = 1771254337885
+/home/jmrs/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar = 1771254337948
+/home/jmrs/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar = 1771254337951
+/home/jmrs/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar = 1771254338070
+/home/jmrs/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar = 1771254337995
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.2/spring-boot-starter-tomcat-3.2.2.jar = 1771254338030
+/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.18/tomcat-embed-core-10.1.18.jar = 1771254338607
+/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.18/tomcat-embed-websocket-10.1.18.jar = 1771254338105
+/home/jmrs/.m2/repository/org/springframework/spring-web/6.1.3/spring-web-6.1.3.jar = 1771254338311
+/home/jmrs/.m2/repository/io/micrometer/micrometer-observation/1.12.2/micrometer-observation-1.12.2.jar = 1771254338203
+/home/jmrs/.m2/repository/io/micrometer/micrometer-commons/1.12.2/micrometer-commons-1.12.2.jar = 1771254338222
+/home/jmrs/.m2/repository/org/springframework/spring-webmvc/6.1.3/spring-webmvc-6.1.3.jar = 1771254338357
+/home/jmrs/.m2/repository/org/springframework/spring-expression/6.1.3/spring-expression-6.1.3.jar = 1771254338382
+/home/jmrs/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.2/spring-boot-starter-validation-3.2.2.jar = 1771254338301
+/home/jmrs/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.18/tomcat-embed-el-10.1.18.jar = 1771254338432
+/home/jmrs/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar = 1771254338495
+/home/jmrs/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar = 1771254338452
+/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar = 1771254338568
+/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar = 1771254338552
+/home/jmrs/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar = 1771254338690
+/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar = 1771254338659
+/home/jmrs/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar = 1771254338980
+/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar = 1771254338719
+/home/jmrs/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar = 1771254338745
+/home/jmrs/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar = 1771254338740
+/home/jmrs/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar = 1771254339073
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/src/main/java = 1771236785623
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/index-all.html = 1771256843369
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/stylesheet.css = 1771256843372
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/jquery-ui.overrides.css = 1771256843373
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/package-search-index.js = 1771256843357
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/allpackages-index.html = 1771256843356
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/overview-summary.html = 1771256843370
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/member-search-index.js = 1771256843358
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/module-search-index.js = 1771256843357
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/tag-search-index.js = 1771256843358
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/index.html = 1771256843337
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/overview-tree.html = 1771256843335
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/script.js = 1771256843372
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/help-doc.html = 1771256843371
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/element-list = 1771256843237
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/type-search-index.js = 1771256843357
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/search.js = 1771256843373
+/home/jmrs/Documentos/PROYECTOS/VDENERGY/gestionParkings/backend/target/site/apidocs/allclasses-index.html = 1771256843355

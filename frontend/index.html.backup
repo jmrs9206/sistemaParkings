@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Parking | Premium Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logoParking.png" alt="Phoenix Logo" class="logo-img">
+            <span>PHOENIX PARKING'S</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('hero')">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#vehicles">Vehículos</a></li>
+                <li><a href="#locations">Ubicaciones</a></li>
+                <li><a href="#pricing">Tarifas</a></li>
+                <li><a href="#" onclick="showSection('register')" style="color: var(--accent);">Hacerse Premium</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('login')">Acceso Exclusivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h4 style="letter-spacing: 5px; margin-bottom: 1.5rem; color: var(--accent); opacity: 0.8;">PREMIUM PARKING & SERVICES</h4>
+                <h1>SEGURIDAD Y<br><span style="color: var(--accent);">EXCLUSIVIDAD</span></h1>
+                <p class="hero-subtitle">
+                    Más que un parking. Un espacio reservado para quienes valoran su tiempo y su vehículo.
+                </p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                    <button class="btn btn-primary" onclick="showSection('register')">Solicitar Abono</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('services').scrollIntoView()">Nuestros Servicios</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="container">
+            <h2>SERVICIOS EXCLUSIVOS</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-box">♿</div>
+                    <h3>Accesibilidad Total</h3>
+                    <p class="text-muted">Plazas XL reservadas para personas con movilidad reducida cerca de los accesos. Comodidad sin barreras.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box">✨</div>
+                    <h3>Aspirado de Cortesía</h3>
+                    <p class="text-muted">Mantenga su vehículo impecable. Servicio de aspirado interior gratuito disponible los fines de semana.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box">🛡️</div>
+                    <h3>Seguridad 24H</h3>
+                    <p class="text-muted">Circuito cerrado de TV de alta definición y personal de vigilancia presente las 24 horas del día.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES / WHY US -->
+                  <br /><br /><br /><br /><br /><br /><br />
+        <section id="advantages" style="background: #000000;">
+            <div class="container">
+                <h2 style="margin-bottom: 3rem;">¿POR QUÉ PHOENIX?</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; text-align: left; align-items: center;">
+                    <div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 2rem; border-left: 2px solid var(--accent); padding-left: 1.5rem;">
+                                <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Prioridad Absoluta</h3>
+                                <p class="text-muted">Nuestros abonados nunca esperan. Acceso preferente en horas punta y reserva de plaza garantizada.</p>
+                            </li>
+                            <li style="margin-bottom: 2rem; border-left: 2px solid var(--accent); padding-left: 1.5rem;">
+                                <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Gestión 100% Digital</h3>
+                                <p class="text-muted">Olvídese de los tickets de papel. Entre y salga con lectura de matrícula y gestione sus facturas desde la app.</p>
+                            </li>
+                            <li style="margin-bottom: 2rem; border-left: 2px solid var(--accent); padding-left: 1.5rem;">
+                                <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.5rem;">Plazas "Gran Turismo"</h3>
+                                <p class="text-muted">Espacios diseñados para vehículos de gran tamaño, evitando golpes y facilitando la maniobra.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card" style="text-align: center; border: 1px solid var(--accent); background: transparent;">
+                        <h3 style="color: var(--accent);">OFERTA DE BIENVENIDA</h3>
+                        <p style="margin: 1rem 0; font-size: 1.1rem; color: white;">Hágase Premium este mes y disfrute de:</p>
+                        <div style="font-size: 2.5rem; font-weight: bold; color: white; margin-bottom: 1rem;">15% DTO.</div>
+                        <p class="text-muted">En su primera cuota mensual.</p>
+                        <div style="font-size: 0.8rem; color: #555; margin-top: 1rem;">*Válido para nuevas altas de titular único. Descuento personal e intransferible.</div>
+                        <button class="btn btn-primary" style="margin-top: 2rem;" onclick="showSection('register')">Aprovechar Oferta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- VEHICLES ACCEPTED -->
+                  <br /><br /><br /><br /><br /><br />
+        <section id="vehicles" class="container">
+            <h2>VEHÍCULOS ADMITIDOS</h2>
+            <div class="grid-3">
+                <div id="card-coche" class="card vehicle-card" onclick="updatePrice('coche')" style="text-align: center; border: 1px solid var(--accent); cursor: pointer; transition: all 0.3s;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">🚗</div>
+                    <h3>TURISMOS</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">Sedán, Coupé, Compactos</p>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Altura Máx: 2.10m</p>
+                    <p style="font-size: 0.7rem; color: var(--accent); margin-top: 1rem; border: 1px solid var(--accent); display: inline-block; padding: 2px 8px; border-radius: 4px;">SELECCIONAR</p>
+                </div>
+                <div id="card-van" class="card vehicle-card" onclick="updatePrice('van')" style="text-align: center; border: 1px solid var(--accent); cursor: pointer; transition: all 0.3s;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">🚙</div>
+                    <h3>SUV & VANS</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">Todoterreno, Monovolumen</p>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Plazas XL Garantizadas</p>
+                    <p style="font-size: 0.7rem; color: var(--accent); margin-top: 1rem; border: 1px solid var(--accent); display: inline-block; padding: 2px 8px; border-radius: 4px;">SELECCIONAR</p>
+                </div>
+                <div id="card-moto" class="card vehicle-card" onclick="updatePrice('moto')" style="text-align: center; border: 1px solid var(--accent); cursor: pointer; transition: all 0.3s;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent);">🏍️</div>
+                    <h3>MOTOCICLETAS</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">Cualquier cilindrada</p>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Zona de anclaje segura</p>
+                    <p style="font-size: 0.7rem; color: var(--accent); margin-top: 1rem; border: 1px solid var(--accent); display: inline-block; padding: 2px 8px; border-radius: 4px;">SELECCIONAR</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+         <br /><br /><br /><br />
+        <section id="pricing" class="container" style="margin-bottom: 4rem;">
+            <h2>TARIFAS Y ABONOS</h2>
+            
+
+            <div class="grid-4" style="text-align: left;">
+                
+                <!-- 1. POR USO -->
+                <div class="card">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">POR USO</h3>
+                    
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <span id="price-usage" style="font-size: 2.5rem; font-weight: bold; color: white;">0,05€ <span style="font-size: 0.9rem;">/ min</span></span>
+                        <div style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">Tarifa única 24h</div>
+                    </div>
+                    
+                    <hr>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Lector de Matrícula</li>
+                        <li>• Facturación por minutos</li>
+                        <li>• Máximo diario: 25€</li>
+                    </ul>
+                </div>
+
+                <!-- 2. 24H (Antes Premium) -->
+                <div class="card" style="border: 2px solid var(--accent); box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);">
+                    <div style="background: var(--accent); color: black; font-weight: bold; padding: 0.2rem 0.5rem; display: inline-block; margin-bottom: 1rem; font-size: 0.8rem;">RECOMENDADO</div>
+                    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--accent);">24H</h3>
+                    <div id="price-24h" style="font-size: 2.8rem; font-weight: bold; margin-bottom: 1rem; color: var(--accent);">120€ <span style="font-size: 1rem; color: white;">/ mes</span></div>
+                    <p style="margin-bottom: 1.5rem; font-style: italic;">La experiencia <span class="phoenix-brand">PHOENIX</span> completa.</p>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li><strong>✓ Acceso Ilimitado</strong></li>
+                        <li><strong>✓ Multi-Matrícula (3 vehículos)</strong></li>
+                        <li><strong>✓ Plaza Garantizada</strong></li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 2rem; background: var(--accent); color: black; font-weight: bold;" onclick="showSection('register')">HACERSE PREMIUM</button>
+                </div>
+
+                <!-- 3. LABORAL -->
+                <div class="card">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">LABORAL</h3>
+                    <div id="price-work" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">85€ <span style="font-size: 1rem;">/ mes</span></div>
+                    <p style="margin-bottom: 1rem;"><strong>Lunes a Viernes<br>07:00 - 20:00</strong></p>
+                    <hr>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Ideal para trabajadores</li>
+                        <li>• Lector de Matrícula</li>
+                        <li>• Plaza en planta alta</li>
+                    </ul>
+                </div>
+
+                <!-- 4. NOCTURNA -->
+                <div class="card">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">NOCTURNA</h3>
+                    <div id="price-night" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">60€ <span style="font-size: 1rem;">/ mes</span></div>
+                    <p style="margin-bottom: 1rem;"><strong>Lunes a Domingo<br>20:00 - 08:00</strong></p>
+                    <hr>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Ideal para residentes</li>
+                        <li>• Lector de Matrícula</li>
+                        <li>• Plaza en planta baja</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATIONS -->
+                  <br /><br /><br /><br />
+        <section id="locations" style="background: #000000; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);">
+            <div class="container">
+                <h2>NUESTRAS UBICACIONES</h2>
+                <div class="grid-4" style="text-align: left;">
+                    <div style="padding: 1rem;">
+                        <h4 style="color: var(--accent);">PHOENIX CENTRO</h4>
+                        <p style="color: white; margin-bottom: 0.5rem;">Plaza Mayor, 1</p>
+                        <p style="font-size: 0.8rem; color: #666;">Acceso directo a zona histórica.</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 1px solid var(--accent);">
+                        <h4 style="color: var(--accent);">PHOENIX NORTE</h4>
+                        <p style="color: white; margin-bottom: 0.5rem;">Paseo de la Castellana, 200</p>
+                        <p style="font-size: 0.8rem; color: #666;">Distrito Financiero.</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 1px solid var(--accent);">
+                        <h4 style="color: var(--accent);">PHOENIX PLAYA</h4>
+                        <p style="color: white; margin-bottom: 0.5rem;">Av. del Mar, 45</p>
+                        <p style="font-size: 0.8rem; color: #666;">Primera línea de costa.</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 1px solid var(--accent);">
+                        <h4 style="color: var(--accent);">PHOENIX ESTACIÓN</h4>
+                        <p style="color: white; margin-bottom: 0.5rem;">Calle Ferrocarril, 12</p>
+                        <p style="font-size: 0.8rem; color: #666;">Junto a Alta Velocidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+                  <br /><br /><br /><br />
+        <section id="faq" class="container">
+            <h2>PREGUNTAS FRECUENTES</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+                
+                <div class="faq-item" style="border-bottom: 1px solid #333; margin-bottom: 1rem;">
+                    <button class="faq-question" style="width: 100%; background: none; border: none; color: white; text-align: left; padding: 1rem; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                        <span>¿Cómo accedo al parking siendo abonado?</span>
+                        <span style="color: var(--accent);">+</span>
+                    </button>
+                    <div class="faq-answer hidden" style="padding: 0 1rem 1rem; color: #ccc; font-size: 0.95rem;">
+                        Nuestro sistema de reconocimiento de matrícula le abrirá la barrera automáticamente. También dispondrá de una tarjeta de proximidad y un código QR en su App móvil como métodos alternativos.
+                    </div>
+                </div>
+
+                <div class="faq-item" style="border-bottom: 1px solid #333; margin-bottom: 1rem;">
+                    <button class="faq-question" style="width: 100%; background: none; border: none; color: white; text-align: left; padding: 1rem; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                        <span>¿La tarifa nocturna incluye fines de semana?</span>
+                        <span style="color: var(--accent);">+</span>
+                    </button>
+                    <div class="faq-answer hidden" style="padding: 0 1rem 1rem; color: #ccc; font-size: 0.95rem;">
+                        Sí. El Abono Nocturno permite el acceso de lunes a viernes de 20:00 a 08:00, e incluye acceso ilimitado durante las 24 horas los sábados, domingos y festivos nacionales.
+                    </div>
+                </div>
+
+                <div class="faq-item" style="border-bottom: 1px solid #333; margin-bottom: 1rem;">
+                    <button class="faq-question" style="width: 100%; background: none; border: none; color: white; text-align: left; padding: 1rem; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                        <span>¿Puedo cancelar mi suscripción?</span>
+                        <span style="color: var(--accent);">+</span>
+                    </button>
+                    <div class="faq-answer hidden" style="padding: 0 1rem 1rem; color: #ccc; font-size: 0.95rem;">
+                        Por supuesto. Puede cancelar su renovación automática en cualquier momento desde su Área Privada con un preaviso de 15 días antes del vencimiento mensual.
+                    </div>
+                </div>
+
+                <div class="faq-item" style="border-bottom: 1px solid #333; margin-bottom: 1rem;">
+                    <button class="faq-question" style="width: 100%; background: none; border: none; color: white; text-align: left; padding: 1rem; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                        <span>¿Admiten vehículos eléctricos?</span>
+                        <span style="color: var(--accent);">+</span>
+                    </button>
+                    <div class="faq-answer hidden" style="padding: 0 1rem 1rem; color: #ccc; font-size: 0.95rem;">
+                        Sí, disponemos de plazas habilitadas, aunque el servicio de carga no está disponible actualmente en la tarifa estándar.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMING SOON -->
+         <br /><br /><br /><br />
+        <section id="coming-soon" style="background: linear-gradient(180deg, #000 0%, #000 100%); padding: 6rem 0; border-top: 1px solid var(--accent);">
+            <div class="container text-center">
+                <span style="letter-spacing: 2px; color: var(--accent);">PRÓXIMAMENTE</span>
+                <h3 style="margin-top: 1rem; color: #555;">SISTEMA DE RESERVAS APP MÓVIL</h3>
+                <p class="text-muted">Estamos trabajando para llevar Phoenix Parking a su bolsillo. Lanzamiento: Otoño 2026.</p>
+            </div>
+        </section>
+        
+        <!-- FUNCTIONAL SECTIONS (Hidden by default) -->
+        <!-- STATUS -->
+        <section id="status-section" class="container hidden">
+            <h2>Estado de la Red</h2>
+            <div id="parking-list" class="grid-3 mt-2">
+                <p>Cargando disponibilidad en tiempo real...</p>
+            </div>
+        </section>
+
+        <!-- REGISTRATION SCRIPT -->
+        <section id="registration-section" class="container hidden" style="padding-top: 4rem;">
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <h2>SOLICITUD DE MEMBRESÍA PREMIUM</h2>
+                
+                <!-- Stepper -->
+                <div class="stepper" style="display:flex; justify-content:space-between; margin-bottom:2rem; position:relative;">
+                    <div class="step active" id="step-1" style="width:40px; height:40px; border-radius:50%; background:var(--accent); color:black; display:flex; align-items:center; justify-content:center; font-weight:bold;">1</div>
+                    <div class="step" id="step-2" style="width:40px; height:40px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">2</div>
+                    <div class="step" id="step-3" style="width:40px; height:40px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">3</div>
+                    <div class="step" id="step-4" style="width:40px; height:40px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center;">4</div>
+                </div>
+
+                <!-- Step 1 -->
+                <div id="form-step-1">
+                    <form id="subscriber-form">
+                        <label>Nombre y Apellidos / Razón Social</label>
+                        <input type="text" id="reg-nombre" placeholder="Ej. Alejandro Magno" required>
+                        
+                        <label>Identificación (DNI / CIF)</label>
+                        <input type="text" id="reg-dni" placeholder="00000000A" required>
+                        
+                        <label>Email Corporativo / Personal</label>
+                        <input type="email" id="reg-email" placeholder="contacto@ejemplo.com" required>
+                        
+                        <label>Teléfono de Contacto</label>
+                        <input type="tel" id="reg-tel" placeholder="+34 600 000 000">
+                        
+                        <label>Sede Preferente</label>
+                        <select id="reg-parking" required>
+                            <option value="1">Phoenix Centro - Plaza Mayor</option>
+                            <option value="2">Phoenix Norte - Business District</option>
+                            <option value="5">Phoenix Playa - Ocean View</option>
+                            <option value="12">Phoenix Estación - High Speed</option>
+                        </select>
+                        
+                        <button type="button" class="btn btn-primary" style="width:100%; margin-top:1rem;" onclick="nextStep(2)">Continuar</button>
+                    </form>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="form-step-2" class="hidden">
+                    <label>Vehículo Principal (Matrícula)</label>
+                    <input type="text" id="reg-m-principal" placeholder="0000 BBB" required>
+                    
+                    <label>Vehículo Secundario 1 (Opcional)</label>
+                    <input type="text" id="reg-m-sec1" placeholder="---">
+                    
+                    <label>Vehículo Secundario 2 (Opcional)</label>
+                    <input type="text" id="reg-m-sec2" placeholder="---">
+                    
+                    <div style="display:flex; gap:1rem; margin-top:1rem;">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(1)">Atrás</button>
+                        <button type="button" class="btn btn-primary" style="flex:1;" onclick="nextStep(3)">Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="form-step-3" class="hidden">
+                    <div style="background: white; color: black; padding: 2rem; max-height: 300px; overflow-y: auto; text-align: left; margin-bottom: 2rem; border-radius: 4px;">
+                        <h3 style="color: black; font-size: 1.2rem; margin-bottom: 1rem;">CONTRATO DE MEMBRESÍA PREMIUM</h3>
+                        <p>Por la presente, el solicitante acepta las condiciones de uso exclusivo de las instalaciones Phoenix...</p>
+                        <p><strong>CLÁUSULA DE DESCUENTO DE BIENVENIDA:</strong></p>
+                        <p style="background: #ffffcc; padding: 0.5rem; border: 1px solid #e0b34c;">
+                            El descuento promocional del 15% es aplicable única y exclusivamente a la primera mensualidad del contrato. Este beneficio está vinculado al Titular (DNI/CIF) y no al vehículo. Se prohíbe expresamente la cancelación y re-contratación con el fin de obtener nuevamente este beneficio. Cualquier intento de fraude resultará en la exclusión permanente del Club Phoenix.
+                        </p>
+                        <p>1. El acceso es personal e intransferible.</p>
+                        <p>2. El servicio de Valet está sujeto a disponibilidad inmediata.</p>
+                    </div>
+                    <label>Firma Digital (Escriba su nombre)</label>
+                    <input type="text" id="reg-firma" placeholder="Firma del Titular">
+                    
+                    <div style="display:flex; gap:1rem; margin-top:1rem;">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(2)">Atrás</button>
+                        <button type="button" class="btn btn-primary" style="flex:1;" onclick="simulateSignature()">Formalizar Alta</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="form-step-4" class="hidden text-center">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
+                    <h2 style="color: var(--accent);">BIENVENIDO A PHOENIX</h2>
+                    <p class="text-muted">Su código de socio exclusivo es:</p>
+                    <h3 id="display-codigo-abonado" style="font-size: 2rem; margin: 1rem 0; color: white;">PHOENIX-LOADING</h3>
+                    
+                    <label style="text-align: left;">Establezca su contraseña de acceso</label>
+                    <input type="password" id="reg-password" placeholder="********">
+                    
+                    <button class="btn btn-primary" style="width:100%; margin-top:2rem;" onclick="finalizeRegistration()">Entrar al Club</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN -->
+        <section id="login-section" class="container hidden" style="padding-top: 4rem;">
+            <div class="card" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <h2>ACCESO EXCLUSIVO</h2>
+                <p class="text-muted mb-4">Ingrese sus credenciales exclusivas</p>
+                <form id="login-form">
+                    <input type="text" id="login-username" placeholder="ID de Socio (Ej. PHOENIX-001)">
+                    <input type="password" id="login-password" placeholder="Contraseña">
+                    
+                    <div style="text-align:left; margin-bottom:1rem;">
+                        <label style="margin-bottom:0.5rem;">Verificación de Seguridad</label>
+                        <div style="display:flex; gap:1rem; align-items:center;">
+                            <span style="color:white;">5 + 3 = </span>
+                            <input type="number" id="login-captcha" style="width:80px; margin:0; text-align:center;">
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" style="width:100%;" onclick="mockLogin()">Acceder</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div class="container" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3rem;">
+            <div>
+                <img src="img/logoParking.png" alt="Phoenix" style="height: 120px; opacity: 1; margin-bottom: 2rem;">
+                <p style="font-size: 1rem; color: white; letter-spacing: 2px;">&copy; 2026 PHOENIX PARKING.</p>
+            </div>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                <a href="#" onclick="showModal('legal')">Aviso Legal</a>
+                <a href="#" onclick="showModal('privacy')">Política de Privacidad</a>
+                <a href="#" onclick="showModal('cookies')">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LEGAL MODAL -->
+    <div id="legal-modal" class="modal hidden">
+        <div class="modal-content card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modal-body-content">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

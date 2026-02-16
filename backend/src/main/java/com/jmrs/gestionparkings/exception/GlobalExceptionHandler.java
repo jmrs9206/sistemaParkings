@@ -23,11 +23,7 @@ public class GlobalExceptionHandler {
         });
         
         return ResponseEntity.badRequest().body(
-            ApiResponse.<Map<String, String>>builder()
-                .success(false)
-                .message("Error de validación")
-                .data(errors)
-                .build()
+            new ApiResponse<>(false, "Error de validación", errors)
         );
     }
 

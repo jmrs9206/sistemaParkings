@@ -34,20 +34,6 @@ services:
     networks:
       - parking-network
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: parking-frontend
-    restart: always
-    environment:
-      NEXT_PUBLIC_API_URL: http://backend:8080/api
-    ports:
-      - "3002:3000"
-    depends_on:
-      - backend
-    networks:
-      - parking-network
 
 networks:
   parking-network:

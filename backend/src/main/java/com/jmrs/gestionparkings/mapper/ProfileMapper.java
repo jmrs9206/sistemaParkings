@@ -4,39 +4,79 @@ import com.jmrs.gestionparkings.dto.*;
 import com.jmrs.gestionparkings.model.*;
 import java.util.stream.Collectors;
 
+/**
+ * Clase de utilidad para el mapeo entre Entidades (Model) y Objetos de Transferencia de Datos (DTO).
+ * Permite mantener la separación de capas en el patrón MVC.
+ * 
+ * @author JMRS
+ * @version 14.1
+ */
 public class ProfileMapper {
 
-    public static AbonadoDTO toDTO(Abonado abonado) {
-        if (abonado == null) return null;
+    /**
+     * Convierte una entidad Abonado a su representación DTO.
+     * 
+     * @param entity Objeto de base de datos.
+     * @return DTO para la capa de interfaz.
+     */
+    public static AbonadoDTO toDTO(Abonado entity) {
+        if (entity == null) return null;
         AbonadoDTO dto = new AbonadoDTO();
-        dto.setIdAbonado(abonado.getIdAbonado());
-        dto.setNombre(abonado.getNombreRazonSocial());
-        dto.setDniCif(abonado.getDniCif());
-        dto.setEmail(abonado.getEmail());
-        // IBAN usually comes from DatosPago if needed, for simplification keep what was there
-        // If entity has no iban, we just leave it or handle it. 
-        // Based on previous code it seemed it expected iban.
+        dto.setIdAbonado(entity.getIdAbonado());
+        dto.setNombreRazonSocial(entity.getNombreRazonSocial());
+        dto.setDniCif(entity.getDniCif());
+        dto.setEmail(entity.getEmail());
+        dto.setTelefono(entity.getTelefono());
+        dto.setIdLocalidad(entity.getIdLocalidad());
+        dto.setIdParking(entity.getIdParking());
+        dto.setMatriculaPrincipal(entity.getMatriculaPrincipal());
+        dto.setMatriculaSecundaria1(entity.getMatriculaSecundaria1());
+        dto.setMatriculaSecundaria2(entity.getMatriculaSecundaria2());
+        dto.setCodigoAbonado(entity.getCodigoAbonado());
+        dto.setActivo(entity.getActivo());
+        dto.setCreatedAt(entity.getCreatedAt());
         return dto;
     }
 
+    /**
+     * Convierte un DTO de Abonado a su entidad persistente.
+     * 
+     * @param dto Objeto proveniente de la interfaz.
+     * @return Entidad para persistencia en base de datos.
+     */
     public static Abonado toEntity(AbonadoDTO dto) {
         if (dto == null) return null;
         Abonado entity = new Abonado();
         entity.setIdAbonado(dto.getIdAbonado());
-        entity.setNombreRazonSocial(dto.getNombre());
+        entity.setNombreRazonSocial(dto.getNombreRazonSocial());
         entity.setDniCif(dto.getDniCif());
         entity.setEmail(dto.getEmail());
+        entity.setTelefono(dto.getTelefono());
+        entity.setIdLocalidad(dto.getIdLocalidad());
+        entity.setIdParking(dto.getIdParking());
+        entity.setMatriculaPrincipal(dto.getMatriculaPrincipal());
+        entity.setMatriculaSecundaria1(dto.getMatriculaSecundaria1());
+        entity.setMatriculaSecundaria2(dto.getMatriculaSecundaria2());
+        entity.setCodigoAbonado(dto.getCodigoAbonado());
+        entity.setActivo(dto.getActivo() != null ? dto.getActivo() : true);
         return entity;
     }
 
-    public static ParkingDTO toDTO(Parking parking) {
-        if (parking == null) return null;
+    /**
+     * Convierte una entidad Parking a ParkingDTO.
+     * 
+     * @param entity Entidad parking.
+     * @return DTO parking.
+     */
+    public static ParkingDTO toDTO(Parking entity) {
+        if (entity == null) return null;
         ParkingDTO dto = new ParkingDTO();
-        dto.setIdParking(parking.getIdParking().intValue()); 
-        // Handle potential type mismatch if parking ID remained Long
-        dto.setNombre(parking.getNombre());
-        if (parking.getZonas() != null) {
-            dto.setZonas(parking.getZonas().stream()
+        dto.setIdParking(entity.getIdParking()); 
+        dto.setNombre(entity.getNombre());
+        dto.setIdLocalidad(entity.getIdLocalidad());
+        dto.setActivo(entity.getActivo());
+        if (entity.getZonas() != null) {
+            dto.setZonas(entity.getZonas().stream()
                 .map(ProfileMapper::zonaToDTO)
                 .collect(Collectors.toList()));
         }

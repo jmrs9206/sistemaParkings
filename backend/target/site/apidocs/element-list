@@ -1,0 +1,8 @@
+com.jmrs.gestionparkings
+com.jmrs.gestionparkings.controller
+com.jmrs.gestionparkings.dto
+com.jmrs.gestionparkings.exception
+com.jmrs.gestionparkings.mapper
+com.jmrs.gestionparkings.model
+com.jmrs.gestionparkings.repository
+com.jmrs.gestionparkings.service

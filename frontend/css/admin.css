@@ -1,0 +1,34 @@
+/* admin.css - Estilos específicos para el Panel de Administración */
+
+/* Gráfico de Barras (Heatmap) */
+.graph-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    height: 10rem; /* 40 Tailwind unit -> 10rem usually */
+}
+
+.graph-bar {
+    flex: 1;
+    background-color: rgba(249, 115, 22, 0.2); /* orange-500/20 */
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    transition: background-color 0.3s;
+}
+
+.graph-bar:hover {
+    background-color: rgb(249, 115, 22); /* orange-500 */
+}
+
+/* Alturas específicas para las barras */
+.graph-bar.h-20 { height: 20%; }
+.graph-bar.h-40 { height: 40%; }
+.graph-bar.h-80 { height: 80%; }
+.graph-bar.h-95 { height: 95%; }
+.graph-bar.h-70 { height: 70%; }
+.graph-bar.h-30 { height: 30%; }
+
+/* Utilidades para override de colores si es necesario */
+.bg-orange-soft { background-color: rgba(249, 115, 22, 0.3); }
+.bg-orange-medium { background-color: rgba(249, 115, 22, 0.6); }
+.bg-orange-strong { background-color: rgba(249, 115, 22, 0.9); }

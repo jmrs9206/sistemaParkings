@@ -61,9 +61,15 @@ CREATE TABLE ABONADOS (
     email VARCHAR(100) NOT NULL UNIQUE,           -- Correo de contacto y login.
     telefono VARCHAR(20),                         -- Contacto telefónico.
     id_localidad INT NOT NULL,                    -- Residencia del abonado.
+    id_parking INT NULL,                          -- [NUEVO] Parking principal asignado (sucursal).
+    matricula_principal VARCHAR(15),              -- [NUEVO] Matrícula principal.
+    matricula_secundaria_1 VARCHAR(15),           -- [NUEVO] Vehículo secundario 1.
+    matricula_secundaria_2 VARCHAR(15),           -- [NUEVO] Vehículo secundario 2.
+    codigo_abonado VARCHAR(50) UNIQUE,            -- [NUEVO] Código profesional (PHX-05-...).
     activo BOOLEAN DEFAULT TRUE,                  -- Estado del cliente.
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP, -- Fecha de alta en el sistema.
-    CONSTRAINT fk_abo_loc FOREIGN KEY (id_localidad) REFERENCES LOCALIDADES(id_localidad) ON DELETE RESTRICT -- Bloqueo geográfico.
+    CONSTRAINT fk_abo_loc FOREIGN KEY (id_localidad) REFERENCES LOCALIDADES(id_localidad) ON DELETE RESTRICT, -- Bloqueo geográfico.
+    CONSTRAINT fk_abo_park FOREIGN KEY (id_parking) REFERENCES PARKINGS(id_parking) ON DELETE RESTRICT -- Integridad referencial con parking.
 );
 
 -- 7. TABLA CATEGORIAS_VEHICULOS: Clasificación por tamaño/tipo.
@@ -136,7 +142,7 @@ CREATE TABLE VEHICULOS (
 -- 12. TABLA METODOS_PAGO: Catálogo de formas de cobro.
 CREATE TABLE METODOS_PAGO (
     id_metodo_pago SERIAL PRIMARY KEY,            -- ID técnico.
-    nombre_metodo VARCHAR(50) NOT NULL UNIQUE,    -- Ej: Visa, IBAN, Cash.
+    nombre_metodo VARCHAR(50) NOT NULL CHECK (nombre_metodo IN ('DOMICILIADO','CONTACTLESS','EFECTIVO')),    -- Ej: Visa, IBAN, Cash.
     tipo_cobro VARCHAR(20) NOT NULL CHECK (tipo_cobro IN ('RECURRENTE','PUNTUAL','AMBOS')), -- Modo de uso.
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP -- Sello.
 );

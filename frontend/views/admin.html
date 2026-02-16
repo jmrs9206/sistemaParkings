@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Gestión (BI) - Phoenix Parking</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Uso puntual de Tailwind para BI complejo -->
+</head>
+<body class="bg-slate-900 text-white">
+    <header class="bg-black/50 p-4 flex justify-between items-center border-b border-white/10">
+        <div class="flex items-center gap-3">
+            <img src="../img/logoParking.png" alt="Phoenix" class="h-8">
+            <span class="font-bold text-orange-500 tracking-wider">PHOENIX ADMIN</span>
+        </div>
+        <div>
+            <span class="mr-4 text-gray-400">Operador: <strong>JMRS</strong></span>
+            <a href="../index.html" class="text-sm bg-red-600 hover:bg-red-700 px-3 py-1 rounded transition">Salir</a>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-12 gap-6 p-6">
+        <!-- Sidebar -->
+        <aside class="col-span-2 space-y-2">
+            <div class="bg-white/5 p-4 rounded-lg cursor-pointer hover:bg-orange-500/20 border border-transparent hover:border-orange-500 transition">
+                <h3 class="font-bold">📊 Dashboard General</h3>
+            </div>
+            <div class="bg-white/5 p-4 rounded-lg cursor-pointer hover:bg-white/10">
+                <h3 class="text-gray-400">🚗 Tiempo Real</h3>
+            </div>
+            <div class="bg-white/5 p-4 rounded-lg cursor-pointer hover:bg-white/10">
+                <h3 class="text-gray-400">📄 Facturación</h3>
+            </div>
+            <div class="bg-white/5 p-4 rounded-lg cursor-pointer hover:bg-white/10">
+                <h3 class="text-gray-400">⚠️ Incidencias</h3>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-span-10">
+            <h1 class="text-2xl font-bold mb-6">Métricas de Negocio (Business Intelligence)</h1>
+            
+            <div class="grid grid-cols-4 gap-4 mb-8">
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <div class="text-gray-400 text-sm mb-1">Ocupación Actual</div>
+                    <div class="text-3xl font-bold text-orange-400">87%</div>
+                    <div class="text-xs text-green-400 mt-2">↑ 5% vs ayer</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <div class="text-gray-400 text-sm mb-1">Ingresos Hoy</div>
+                    <div class="text-3xl font-bold">1.240€</div>
+                    <div class="text-xs text-gray-500 mt-2">Proyectado: 1.800€</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <div class="text-gray-400 text-sm mb-1">Abonados Activos</div>
+                    <div class="text-3xl font-bold">142</div>
+                    <div class="text-xs text-gray-500 mt-2">+3 altas nuevas</div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <div class="text-gray-400 text-sm mb-1">Plazas Mantenimiento</div>
+                    <div class="text-3xl font-bold text-red-500">2</div>
+                    <div class="text-xs text-red-400 mt-2">Requieren atención</div>
+                </div>
+            </div>
+
+            <!-- Gráfico Simulado CSS -->
+            <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                <h3 class="font-bold mb-4">Ocupación por Hora (Heatmap)</h3>
+                <div class="graph-container">
+                    <div class="graph-bar h-20"></div>
+                    <div class="graph-bar h-40"></div>
+                    <div class="graph-bar h-80"></div>
+                    <div class="graph-bar h-95"></div>
+                    <div class="graph-bar h-70"></div>
+                    <div class="graph-bar h-30"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-2">
+                    <span>08:00</span>
+                    <span>12:00</span>
+                    <span>16:00</span>
+                    <span>20:00</span>
+                    <span>00:00</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

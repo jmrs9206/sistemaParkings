@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Parking | Premium Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logoParking.png" alt="Phoenix Logo" class="logo-img">
+            <span>PHOENIX PARKING'S</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('hero')">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#vehicles">Vehículos</a></li>
+                <li><a href="#locations">Ubicaciones</a></li>
+                <li><a href="#pricing">Tarifas</a></li>
+                <li><a href="#" onclick="showSection('register')" class="nav-premium">Hacerse Premium</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('login')">Acceso Exclusivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h4 class="hero-tagline">PREMIUM PARKING & SERVICES</h4>
+                <h1>SEGURIDAD Y<br><span class="text-gold">EXCLUSIVIDAD</span></h1>
+                <p class="hero-subtitle">
+                    Más que un parking. Un espacio reservado para quienes valoran su tiempo y su vehículo.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showSection('register')">Solicitar Abono</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('services').scrollIntoView()">Nuestros Servicios</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="container">
+            <h2>SERVICIOS EXCLUSIVOS</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-box">♿</div>
+                    <h3>Accesibilidad Total</h3>
+                    <p class="text-muted">Plazas XL reservadas para personas con movilidad reducida cerca de los accesos. Comodidad sin barreras.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box">✨</div>
+                    <h3>Aspirado de Cortesía</h3>
+                    <p class="text-muted">Mantenga su vehículo impecable. Servicio de aspirado interior gratuito disponible los fines de semana.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box">🛡️</div>
+                    <h3>Seguridad 24H</h3>
+                    <p class="text-muted">Circuito cerrado de TV de alta definición y personal de vigilancia presente las 24 horas del día.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADVANTAGES / WHY US -->
+        <section id="advantages" class="advantages-section">
+            <div class="container">
+                <h2>¿POR QUÉ PHOENIX?</h2>
+                <div class="advantages-grid">
+                    <div>
+                        <ul class="advantages-list">
+                            <li class="advantage-item">
+                                <h3>Prioridad Absoluta</h3>
+                                <p class="text-muted">Nuestros abonados nunca esperan. Acceso preferente en horas punta y reserva de plaza garantizada.</p>
+                            </li>
+                            <li class="advantage-item">
+                                <h3>Gestión 100% Digital</h3>
+                                <p class="text-muted">Olvídese de los tickets de papel. Entre y salga con lectura de matrícula y gestione sus facturas desde la app.</p>
+                            </li>
+                            <li class="advantage-item">
+                                <h3>Plazas "Gran Turismo"</h3>
+                                <p class="text-muted">Espacios diseñados para vehículos de gran tamaño, evitando golpes y facilitando la maniobra.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card welcome-offer">
+                        <h3 class="text-gold">OFERTA DE BIENVENIDA</h3>
+                        <p class="offer-text">Hágase Premium este mes y disfrute de:</p>
+                        <div class="offer-discount">15% DTO.</div>
+                        <p class="text-muted">En su primera cuota mensual.</p>
+                        <div class="offer-terms">*Válido para nuevas altas de titular único. Descuento personal e intransferible.</div>
+                        <button class="btn btn-primary offer-button" onclick="showSection('register')">Aprovechar Oferta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VEHICLES ACCEPTED -->
+        <section id="vehicles" class="container">
+            <h2>VEHÍCULOS ADMITIDOS</h2>
+            <div class="grid-3">
+                <div id="card-coche" class="card vehicle-card" onclick="updatePrice('coche')">
+                    <div class="vehicle-icon">🚗</div>
+                    <h3>TURISMOS</h3>
+                    <p class="vehicle-subtitle">Sedán, Coupé, Compactos</p>
+                    <p class="vehicle-spec">Altura Máx: 2.10m</p>
+                    <p class="vehicle-badge">SELECCIONAR</p>
+                </div>
+                <div id="card-van" class="card vehicle-card" onclick="updatePrice('van')">
+                    <div class="vehicle-icon">🚙</div>
+                    <h3>SUV & VANS</h3>
+                    <p class="vehicle-subtitle">Todoterreno, Monovolumen</p>
+                    <p class="vehicle-spec">Plazas XL Garantizadas</p>
+                    <p class="vehicle-badge">SELECCIONAR</p>
+                </div>
+                <div id="card-moto" class="card vehicle-card" onclick="updatePrice('moto')">
+                    <div class="vehicle-icon">🏍️</div>
+                    <h3>MOTOCICLETAS</h3>
+                    <p class="vehicle-subtitle">Cualquier cilindrada</p>
+                    <p class="vehicle-spec">Zona de anclaje segura</p>
+                    <p class="vehicle-badge">SELECCIONAR</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing" class="container pricing-section">
+            <h2>TARIFAS Y ABONOS</h2>
+            
+            <div class="grid-4">
+                
+                <!-- 1. POR USO -->
+                <div class="card">
+                    <h3 class="tariff-title">POR USO</h3>
+
+                    <div class="price-display">
+                        <span id="price-usage" class="price-main">0,05€ <span class="price-unit">/ min</span></span>
+                        <div class="price-subtitle">Tarifa única 24h</div>
+                    </div>
+                    
+                    <hr>
+                    <ul class="tariff-features">
+                        <li>• Lector de Matrícula</li>
+                        <li>• Facturación por minutos</li>
+                        <li>• Máximo diario: 25€</li>
+                    </ul>
+                </div>
+
+                <!-- 2. 24H (Antes Premium) -->
+                <div class="card tariff-recommended">
+                    <div class="recommended-badge">RECOMENDADO</div>
+                    <h3 class="tariff-title-premium">24H</h3>
+                    <div id="price-24h" class="price-main-premium">120€ <span class="price-unit-white">/ mes</span></div>
+                    <p class="tariff-description">La experiencia <span class="phoenix-brand">PHOENIX</span> completa.</p>
+                    <ul class="tariff-features">
+                        <li><strong>✓ Acceso Ilimitado</strong></li>
+                        <li><strong>✓ Multi-Matrícula (3 vehículos)</strong></li>
+                        <li><strong>✓ Plaza Garantizada</strong></li>
+                    </ul>
+                    <button class="btn btn-primary tariff-button" onclick="showSection('register')">HACERSE PREMIUM</button>
+                </div>
+
+                <!-- 3. LABORAL -->
+                <div class="card">
+                    <h3 class="tariff-title">LABORAL</h3>
+                    <div id="price-work" class="price-main">85€ <span class="price-unit">/ mes</span></div>
+                    <p class="tariff-schedule"><strong>Lunes a Viernes<br>07:00 - 20:00</strong></p>
+                    <hr>
+                    <ul class="tariff-features">
+                        <li>• Ideal para trabajadores</li>
+                        <li>• Lector de Matrícula</li>
+                        <li>• Plaza en planta alta</li>
+                    </ul>
+                </div>
+
+                <!-- 4. NOCTURNA -->
+                <div class="card">
+                    <h3 class="tariff-title">NOCTURNA</h3>
+                    <div id="price-night" class="price-main">60€ <span class="price-unit">/ mes</span></div>
+                    <p class="tariff-schedule"><strong>Lunes a Domingo<br>20:00 - 08:00</strong></p>
+                    <hr>
+                    <ul class="tariff-features">
+                        <li>• Ideal para residentes</li>
+                        <li>• Lector de Matrícula</li>
+                        <li>• Plaza en planta baja</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOCATIONS -->
+        <section id="locations" class="locations-section">
+            <div class="container">
+                <h2>NUESTRAS UBICACIONES</h2>
+                <div class="grid-4">
+                    <div class="location-item">
+                        <h4 class="text-gold">PHOENIX CENTRO</h4>
+                        <p class="location-address">Plaza Mayor, 1</p>
+                        <p class="location-description">Acceso directo a zona histórica.</p>
+                    </div>
+                    <div class="location-item location-divider">
+                        <h4 class="text-gold">PHOENIX NORTE</h4>
+                        <p class="location-address">Paseo de la Castellana, 200</p>
+                        <p class="location-description">Distrito Financiero.</p>
+                    </div>
+                    <div class="location-item location-divider">
+                        <h4 class="text-gold">PHOENIX PLAYA</h4>
+                        <p class="location-address">Av. del Mar, 45</p>
+                        <p class="location-description">Primera línea de costa.</p>
+                    </div>
+                    <div class="location-item location-divider">
+                        <h4 class="text-gold">PHOENIX ESTACIÓN</h4>
+                        <p class="location-address">Calle Ferrocarril, 12</p>
+                        <p class="location-description">Junto a Alta Velocidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="container">
+            <h2>PREGUNTAS FRECUENTES</h2>
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo accedo al parking siendo abonado?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer hidden">
+                        Nuestro sistema de reconocimiento de matrícula le abrirá la barrera automáticamente. También dispondrá de una tarjeta de proximidad y un código QR en su App móvil como métodos alternativos.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿La tarifa nocturna incluye fines de semana?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer hidden">
+                        Sí. El Abono Nocturno permite el acceso de lunes a viernes de 20:00 a 08:00, e incluye acceso ilimitado durante las 24 horas los sábados, domingos y festivos nacionales.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Puedo cancelar mi suscripción?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer hidden">
+                        Por supuesto. Puede cancelar su renovación automática en cualquier momento desde su Área Privada con un preaviso de 15 días antes del vencimiento mensual.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Admiten vehículos eléctricos?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer hidden">
+                        Sí, disponemos de plazas habilitadas, aunque el servicio de carga no está disponible actualmente en la tarifa estándar.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMING SOON -->
+        <section id="coming-soon" class="coming-soon-section">
+            <div class="container text-center">
+                <span class="coming-soon-label">PRÓXIMAMENTE</span>
+                <h3 class="coming-soon-title">SISTEMA DE RESERVAS APP MÓVIL</h3>
+                <p class="text-muted">Estamos trabajando para llevar Phoenix Parking a su bolsillo. Lanzamiento: Otoño 2026.</p>
+            </div>
+        </section>
+        
+        <!-- FUNCTIONAL SECTIONS (Hidden by default) -->
+        <!-- STATUS -->
+        <section id="status-section" class="container hidden">
+            <h2>Estado de la Red</h2>
+            <div id="parking-list" class="grid-3 mt-2">
+                <p>Cargando disponibilidad en tiempo real...</p>
+            </div>
+        </section>
+
+        <!-- REGISTRATION MODAL -->
+        <div id="registration-modal" class="modal hidden">
+            <div class="modal-content card">
+                <span class="close-modal" onclick="closeModal('registration-modal')">&times;</span>
+                <h2>SOLICITUD DE MEMBRESÍA PREMIUM</h2>
+                
+                <!-- Stepper -->
+                <div class="stepper">
+                    <div class="step active" id="step-1">1</div>
+                    <div class="step" id="step-2">2</div>
+                    <div class="step" id="step-3">3</div>
+                    <div class="step" id="step-4">4</div>
+                </div>
+
+                <!-- Step 1 -->
+                <div id="form-step-1">
+                    <form id="subscriber-form">
+                        <label>Nombre y Apellidos / Razón Social</label>
+                        <input type="text" id="reg-nombre" placeholder="Ej. Alejandro Magno" required>
+                        
+                        <label>Identificación (DNI / CIF)</label>
+                        <input type="text" id="reg-dni" placeholder="00000000A" required>
+                        
+                        <label>Email Corporativo / Personal</label>
+                        <input type="email" id="reg-email" placeholder="contacto@ejemplo.com" required>
+                        
+                        <label>Teléfono de Contacto</label>
+                        <input type="tel" id="reg-tel" placeholder="+34 600 000 000">
+                        
+                        <label>Sede Preferente</label>
+                        <select id="reg-parking" required>
+                            <option value="1">Phoenix Centro - Plaza Mayor</option>
+                            <option value="2">Phoenix Norte - Business District</option>
+                            <option value="5">Phoenix Playa - Ocean View</option>
+                            <option value="12">Phoenix Estación - High Speed</option>
+                        </select>
+                        
+                        <button type="button" class="btn btn-primary btn-full" onclick="nextStep(2)">Continuar</button>
+                    </form>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="form-step-2" class="hidden">
+                    <label>Vehículo Principal (Matrícula)</label>
+                    <input type="text" id="reg-m-principal" placeholder="0000 BBB" required>
+                    
+                    <label>Vehículo Secundario 1 (Opcional)</label>
+                    <input type="text" id="reg-m-sec1" placeholder="---">
+                    
+                    <label>Vehículo Secundario 2 (Opcional)</label>
+                    <input type="text" id="reg-m-sec2" placeholder="---">
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(1)">Atrás</button>
+                        <button type="button" class="btn btn-primary btn-flex" onclick="nextStep(3)">Continuar</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="form-step-3" class="hidden">
+                    <div class="contract-box">
+                        <h3 class="contract-title">CONTRATO DE MEMBRESÍA PREMIUM</h3>
+                        <p>Por la presente, el solicitante acepta las condiciones de uso exclusivo de las instalaciones Phoenix...</p>
+                        <p><strong>CLÁUSULA DE DESCUENTO DE BIENVENIDA:</strong></p>
+                        <p class="contract-highlight">
+                            El descuento promocional del 15% es aplicable única y exclusivamente a la primera mensualidad del contrato. Este beneficio está vinculado al Titular (DNI/CIF) y no al vehículo. Se prohíbe expresamente la cancelación y re-contratación con el fin de obtener nuevamente este beneficio. Cualquier intento de fraude resultará en la exclusión permanente del Club Phoenix.
+                        </p>
+                        <p>1. El acceso es personal e intransferible.</p>
+                        <p>2. El servicio de Valet está sujeto a disponibilidad inmediata.</p>
+                    </div>
+                    <label>Firma Digital (Escriba su nombre)</label>
+                    <input type="text" id="reg-firma" placeholder="Firma del Titular">
+                    
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(2)">Atrás</button>
+                        <button type="button" class="btn btn-primary btn-flex" onclick="simulateSignature()">Formalizar Alta</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="form-step-4" class="hidden text-center">
+                    <div class="success-icon">✨</div>
+                    <h2 class="text-gold">BIENVENIDO A PHOENIX</h2>
+                    <p class="text-muted">Su código de socio exclusivo es:</p>
+                    <h3 id="display-codigo-abonado" class="member-code">PHOENIX-LOADING</h3>
+                    
+                    <label class="label-left">Establezca su contraseña de acceso</label>
+                    <input type="password" id="reg-password" placeholder="********">
+                    
+                    <button class="btn btn-primary btn-full btn-top" onclick="finalizeRegistration()">Entrar al Club</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGIN MODAL -->
+        <div id="login-modal" class="modal hidden">
+            <div class="modal-content login-modal-content">
+                <span class="close-modal" onclick="closeModal('login-modal')">&times;</span>
+                <div class="login-grid">
+                    <!-- Left Card: Login Form -->
+                    <div class="card login-form-card">
+                        <h2>ACCESO EXCLUSIVO</h2>
+                        <p class="text-muted mb-4">Ingrese sus credenciales exclusivas</p>
+                        <form id="login-form">
+                            <input type="text" id="login-username" placeholder="ID de Socio (Ej. PHOENIX-001)">
+                            <input type="password" id="login-password" placeholder="Contraseña">
+                            
+                            <div class="captcha-container">
+                                <label>Verificación de Seguridad</label>
+                                <div class="captcha-input">
+                                    <span class="captcha-question">5 + 3 = </span>
+                                    <input type="number" id="login-captcha" class="captcha-field">
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary btn-full" onclick="mockLogin()">Acceder</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Right Card: Logo -->
+                    <div class="card login-logo-card">
+                        <div class="login-logo-container">
+                            <img src="img/logoParking.png" alt="Phoenix Parking" class="login-logo">
+                            <h3 class="text-gold">PHOENIX PARKING</h3>
+                            <p class="text-muted">Premium Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p class="footer-copyright">&copy; 2026 PHOENIX PARKING.</p>
+            </div>
+            <div class="footer-center">
+                <img src="img/logoParking.png" alt="Phoenix" class="footer-logo">
+            </div>
+            <div class="footer-links">
+                <a href="#" onclick="showModal('legal')">Aviso Legal</a>
+                <a href="#" onclick="showModal('privacy')">Política de Privacidad</a>
+                <a href="#" onclick="showModal('cookies')">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LEGAL MODAL -->
+    <div id="legal-modal" class="modal hidden">
+        <div class="modal-content card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modal-body-content">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

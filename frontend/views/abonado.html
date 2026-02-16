@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Abonado - Phoenix Parking</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Reutilizamos el estilo principal subiendo un nivel -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/abonado.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-brand">
+            <img src="../img/logoParking.png" alt="Phoenix" style="height: 30px;">
+            <span>PORTAL ABONADO</span>
+        </div>
+        <div class="header-user-area">
+            <span>Hola, <strong>Usuario</strong></span>
+            <a href="../index.html" class="btn btn-secondary btn-logout">Cerrar Sesión</a>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <h1>Mi Área Personal</h1>
+        
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h3 class="stat-header">Estado Contrato</h3>
+                <div class="stat-value active">ACTIVO</div>
+                <p class="stat-subtext">Plan Mensual 24h</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="stat-header">Próximo Pago</h3>
+                <div class="stat-value">120,00€</div>
+                <p class="stat-subtext">Vence: 01/03/2026</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="stat-header">Mi Parking</h3>
+                <div class="stat-value large">PHX-01 Centro</div>
+                <p class="stat-subtext">Plaza Asignada: P1-45</p>
+            </div>
+        </div>
+
+        <section class="card">
+            <h2>Gestión de Vehículos</h2>
+            <table class="vehicle-table">
+                <thead>
+                    <tr>
+                        <th width="40%">Matrícula</th>
+                        <th width="30%">Tipo</th>
+                        <th width="30%">Acceso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-mono">1234-BBB</td>
+                        <td>Turismo</td>
+                        <td><span class="badge-success">Autorizado</span></td>
+                    </tr>
+                    <tr>
+                        <td class="font-mono">5678-CCC</td>
+                        <td>Moto</td>
+                        <td><span class="badge-success">Autorizado</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
