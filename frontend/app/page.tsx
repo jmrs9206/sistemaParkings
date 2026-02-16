@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Parking, ApiResponse } from "@/types/parking";
+import { Parking, ApiResponse, Zona, Estacion } from "@/types/parking";
 import ParkingMap from "@/components/dashboard/ParkingMap";
 
 // DML-matched Mock Data V12.0 (DTO Pattern)
@@ -50,12 +50,17 @@ export default function Home() {
         // Simple simulation: flip a random station's status
         setParkingData(prev => {
           if (!prev) return prev;
-          const newZonas = [...prev.zonas];
-          const zIdx = Math.floor(Math.random() * newZonas.length);
-          const eIdx = Math.floor(Math.random() * newZonas[zIdx].estaciones.length);
+          const zIdx = Math.floor(Math.random() * prev.zonas.length);
+          const eIdx = Math.floor(Math.random() * prev.zonas[zIdx].estaciones.length);
           
-          const current = newZonas[zIdx].estaciones[eIdx].estadoActual;
-          newZonas[zIdx].estaciones[eIdx].estadoActual = current === 'L' ? 'O' : 'L';
+          const newZonas = prev.zonas.map((zona: Zona, i: number) => {
+            if (i !== zIdx) return zona;
+            const newEstaciones = zona.estaciones.map((est: Estacion, j: number) => {
+              if (j !== eIdx) return est;
+              return { ...est, estadoActual: (est.estadoActual === 'L' ? 'O' : 'L') as 'L' | 'O' | 'M' };
+            });
+            return { ...zona, estaciones: newEstaciones };
+          });
           
           return { ...prev, zonas: newZonas };
         });

@@ -13,7 +13,7 @@ export default function ParkingMap({ parking }: ParkingMapProps) {
       <div className="flex items-center justify-between border-b border-white/5 pb-6">
         <div>
           <h2 className="text-3xl font-bold text-white">{parking.nombre}</h2>
-          <p className="text-white/40 text-sm italic">ID Localidad: {parking.idLocalidad} • Estado Operativo</p>
+          <p className="text-white/40 text-sm italic">Estado Operativo en Tiempo Real</p>
         </div>
         <div className="flex gap-4">
             <Legend color="bg-parking-green" label="Libre" />

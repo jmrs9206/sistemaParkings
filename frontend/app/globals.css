@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --color-parking-blue: #1f3c88;
+  --color-parking-gold: #e0b34c;
+  --color-parking-dark: #0a0a0c;
+  --color-parking-green: #4ade80;
+  --color-parking-red: #f87171;
+  --color-parking-yellow: #facc15;
+}
 
 :root {
   --background: #0a0a0c;
@@ -19,7 +28,7 @@ body {
   }
 
   .btn-gold {
-    @apply bg-parking-gold text-parking-dark px-6 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-all active:scale-95;
+    @apply bg-parking-gold text-parking-dark px-6 py-2 rounded-lg font-bold hover:bg-parking-gold/90 transition-all active:scale-95;
   }
 
   .nav-link {
