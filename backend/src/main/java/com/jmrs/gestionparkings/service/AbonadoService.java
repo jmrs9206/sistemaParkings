@@ -1,5 +1,7 @@
 package com.jmrs.gestionparkings.service;
 
+import com.jmrs.gestionparkings.dto.AbonadoDTO;
+import com.jmrs.gestionparkings.mapper.ProfileMapper;
 import com.jmrs.gestionparkings.model.Abonado;
 import com.jmrs.gestionparkings.repository.AbonadoRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,18 +13,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AbonadoService {
 
-    private final AbonadoRepository abonadoRepository;
+    private final AbonadoRepository repository;
 
-    @Transactional
-    public Abonado registerSubscriber(Abonado abonado) {
+    public AbonadoDTO registerSubscriber(AbonadoDTO dto) {
         // Validación básica: Ver si ya existe por DNI o Email
-        if (abonadoRepository.findByDniCif(abonado.getDniCif()).isPresent()) {
+        if (repository.findByDniCif(dto.getDniCif()).isPresent()) {
             throw new RuntimeException("El DNI/CIF ya está registrado en el sistema.");
         }
-        if (abonadoRepository.findByEmail(abonado.getEmail()).isPresent()) {
+        if (repository.findByEmail(dto.getEmail()).isPresent()) {
             throw new RuntimeException("El Email ya está registrado.");
         }
-        return abonadoRepository.save(abonado);
     }
 
     @Transactional(readOnly = true)

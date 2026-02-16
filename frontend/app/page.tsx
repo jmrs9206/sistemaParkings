@@ -1,39 +1,40 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Parking } from "@/types/parking";
+import { Parking, ApiResponse } from "@/types/parking";
 import ParkingMap from "@/components/dashboard/ParkingMap";
 
-// DML-matched Mock Data V11.0
-const MOCK_PARKING: Parking = {
-  idParking: 1,
-  nombre: "Parking Centro Sol",
-  idLocalidad: 1,
-  activo: true,
-  zonas: [
-    {
-      idZona: 1,
-      nombre: "Planta 0 - Principal",
-      activo: true,
-      estaciones: [
-        { idEstacion: 1, codigoEstacion: "P0-01", idSensor: "SENS-001", estadoActual: "O" },
-        { idEstacion: 2, codigoEstacion: "P0-02", idSensor: "SENS-002", estadoActual: "L" },
-        { idEstacion: 3, codigoEstacion: "P0-03", idSensor: "SENS-003", estadoActual: "L" },
-        { idEstacion: 4, codigoEstacion: "P0-04", idSensor: "SENS-004", estadoActual: "M" },
-        { idEstacion: 5, codigoEstacion: "P0-05", idSensor: "SENS-005", estadoActual: "L" },
-      ]
-    },
-    {
-        idZona: 2,
-        nombre: "Planta -1 - VIP",
-        activo: true,
+// DML-matched Mock Data V12.0 (DTO Pattern)
+const MOCK_RESPONSE: ApiResponse<Parking> = {
+  success: true,
+  message: "Mock data loaded",
+  timestamp: new Date().toISOString(),
+  data: {
+    idParking: 1,
+    nombre: "Parking Centro Sol",
+    zonas: [
+      {
+        idZona: 1,
+        nombre: "Planta 0 - Principal",
         estaciones: [
-          { idEstacion: 6, codigoEstacion: "P1-01", idSensor: "SENS-006", estadoActual: "O" },
-          { idEstacion: 7, codigoEstacion: "P1-02", idSensor: "SENS-007", estadoActual: "O" },
-          { idEstacion: 8, codigoEstacion: "P1-03", idSensor: "SENS-008", estadoActual: "L" },
+          { idEstacion: 1, codigoEstacion: "P0-01", estadoActual: "O" },
+          { idEstacion: 2, codigoEstacion: "P0-02", estadoActual: "L" },
+          { idEstacion: 3, codigoEstacion: "P0-03", estadoActual: "L" },
+          { idEstacion: 4, codigoEstacion: "P0-04", estadoActual: "M" },
+          { idEstacion: 5, codigoEstacion: "P0-05", estadoActual: "L" },
         ]
-      }
-  ]
+      },
+      {
+          idZona: 2,
+          nombre: "Planta -1 - VIP",
+          estaciones: [
+            { idEstacion: 6, codigoEstacion: "P1-01", estadoActual: "O" },
+            { idEstacion: 7, codigoEstacion: "P1-02", estadoActual: "O" },
+            { idEstacion: 8, codigoEstacion: "P1-03", estadoActual: "L" },
+          ]
+        }
+    ]
+  }
 };
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     // Initial load
-    setParkingData(MOCK_PARKING);
+    setParkingData(MOCK_RESPONSE.data);
 
     if (isLive) {
       const interval = setInterval(() => {

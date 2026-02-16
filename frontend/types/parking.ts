@@ -1,23 +1,26 @@
 export type StationStatus = 'L' | 'O' | 'M';
 
-export interface Estacion {
-  idEstacion: number;
-  codigoEstacion: string;
-  idSensor: string;
-  estadoActual: StationStatus;
-}
-
-export interface Zona {
-  idZona: number;
-  nombre: string;
-  activo: boolean;
-  estaciones: Estacion[];
+export interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+  timestamp: string;
 }
 
 export interface Parking {
   idParking: number;
   nombre: string;
-  idLocalidad: number;
-  activo: boolean;
   zonas: Zona[];
+}
+
+export interface Zona {
+  idZona: number;
+  nombre: string;
+  estaciones: Estacion[];
+}
+
+export interface Estacion {
+  idEstacion: number;
+  codigoEstacion: string;
+  estadoActual: 'L' | 'O' | 'M';
 }

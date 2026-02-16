@@ -1,7 +1,9 @@
 package com.jmrs.gestionparkings.controller;
 
-import com.jmrs.gestionparkings.model.Abonado;
+import com.jmrs.gestionparkings.dto.AbonadoDTO;
+import com.jmrs.gestionparkings.dto.ApiResponse;
 import com.jmrs.gestionparkings.service.AbonadoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,19 +17,15 @@ public class AbonadoController {
     private final AbonadoService abonadoService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody Abonado abonado) {
-        try {
-            Abonado saved = abonadoService.registerSubscriber(abonado);
-            return ResponseEntity.ok(saved);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public ResponseEntity<ApiResponse<AbonadoDTO>> register(@Valid @RequestBody AbonadoDTO dto) {
+        AbonadoDTO saved = abonadoService.registerSubscriber(dto);
+        return ResponseEntity.ok(ApiResponse.success(saved, "Abonado registrado con éxito"));
     }
 
     @GetMapping("/{dni}")
-    public ResponseEntity<Abonado> getProfile(@PathVariable String dni) {
+    public ResponseEntity<ApiResponse<AbonadoDTO>> getProfile(@PathVariable String dni) {
         return abonadoService.getAbonadoByDni(dni)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .map(dto -> ResponseEntity.ok(ApiResponse.success(dto, "Perfil recuperado")))
+                .orElse(ResponseEntity.status(404).body(ApiResponse.error("Abonado no encontrado")));
     }
 }

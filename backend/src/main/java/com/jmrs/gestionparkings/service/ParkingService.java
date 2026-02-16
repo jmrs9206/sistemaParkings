@@ -1,20 +1,23 @@
 package com.jmrs.gestionparkings.service;
 
-import com.jmrs.gestionparkings.model.Parking;
+import com.jmrs.gestionparkings.dto.ParkingDTO;
+import com.jmrs.gestionparkings.mapper.ProfileMapper;
 import com.jmrs.gestionparkings.repository.ParkingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class ParkingService {
 
-    private final ParkingRepository parkingRepository;
+    private final ParkingRepository repository;
 
-    @Transactional(readOnly = true)
-    public List<Parking> getActiveParkingsWithDetails() {
-        return parkingRepository.findByActivoTrue();
+    public List<ParkingDTO> getActiveParkingsWithDetails() {
+        return repository.findAll().stream()
+                .filter(p -> Boolean.TRUE.equals(p.getActivo()))
+                .map(ProfileMapper::toDTO)
+                .collect(Collectors.toList());
     }
 }
