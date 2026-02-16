@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0c;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Inter", sans-serif;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl;
+  }
+
+  .btn-gold {
+    @apply bg-parking-gold text-parking-dark px-6 py-2 rounded-lg font-bold hover:bg-opacity-90 transition-all active:scale-95;
+  }
+
+  .nav-link {
+    @apply text-white/70 hover:text-parking-gold transition-colors;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-parking-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-parking-blue/50 rounded-full hover:bg-parking-blue;
+}
