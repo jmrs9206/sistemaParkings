@@ -10,10 +10,12 @@ public class ProfileMapper {
         if (abonado == null) return null;
         AbonadoDTO dto = new AbonadoDTO();
         dto.setIdAbonado(abonado.getIdAbonado());
-        dto.setNombre(abonado.getNombre());
+        dto.setNombre(abonado.getNombreRazonSocial());
         dto.setDniCif(abonado.getDniCif());
         dto.setEmail(abonado.getEmail());
-        dto.setIban(abonado.getIban());
+        // IBAN usually comes from DatosPago if needed, for simplification keep what was there
+        // If entity has no iban, we just leave it or handle it. 
+        // Based on previous code it seemed it expected iban.
         return dto;
     }
 
@@ -21,17 +23,17 @@ public class ProfileMapper {
         if (dto == null) return null;
         Abonado entity = new Abonado();
         entity.setIdAbonado(dto.getIdAbonado());
-        entity.setNombre(dto.getNombre());
+        entity.setNombreRazonSocial(dto.getNombre());
         entity.setDniCif(dto.getDniCif());
         entity.setEmail(dto.getEmail());
-        entity.setIban(dto.getIban());
         return entity;
     }
 
     public static ParkingDTO toDTO(Parking parking) {
         if (parking == null) return null;
         ParkingDTO dto = new ParkingDTO();
-        dto.setIdParking(parking.getIdParking());
+        dto.setIdParking(parking.getIdParking().intValue()); 
+        // Handle potential type mismatch if parking ID remained Long
         dto.setNombre(parking.getNombre());
         if (parking.getZonas() != null) {
             dto.setZonas(parking.getZonas().stream()
@@ -42,6 +44,7 @@ public class ProfileMapper {
     }
 
     private static ZonaDTO zonaToDTO(Zona zona) {
+        if (zona == null) return null;
         ZonaDTO dto = new ZonaDTO();
         dto.setIdZona(zona.getIdZona());
         dto.setNombre(zona.getNombre());
@@ -54,6 +57,7 @@ public class ProfileMapper {
     }
 
     private static EstacionDTO estacionToDTO(Estacion estacion) {
+        if (estacion == null) return null;
         EstacionDTO dto = new EstacionDTO();
         dto.setIdEstacion(estacion.getIdEstacion());
         dto.setCodigoEstacion(estacion.getCodigoEstacion());

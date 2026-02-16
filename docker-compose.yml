@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: password_parking
       POSTGRES_DB: gestion_parkings
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database:/docker-entrypoint-initdb.d # Auto-init with modular schema
@@ -43,7 +43,7 @@ services:
     environment:
       NEXT_PUBLIC_API_URL: http://backend:8080/api
     ports:
-      - "3000:3000"
+      - "3002:3000"
     depends_on:
       - backend
     networks:

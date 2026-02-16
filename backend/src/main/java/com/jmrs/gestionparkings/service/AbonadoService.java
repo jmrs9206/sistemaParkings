@@ -23,10 +23,14 @@ public class AbonadoService {
         if (repository.findByEmail(dto.getEmail()).isPresent()) {
             throw new RuntimeException("El Email ya está registrado.");
         }
+
+        Abonado abonado = ProfileMapper.toEntity(dto);
+        Abonado saved = repository.save(abonado);
+        return ProfileMapper.toDTO(saved);
     }
 
     @Transactional(readOnly = true)
     public Optional<Abonado> getAbonadoByDni(String dni) {
-        return abonadoRepository.findByDniCif(dni);
+        return repository.findByDniCif(dni);
     }
 }

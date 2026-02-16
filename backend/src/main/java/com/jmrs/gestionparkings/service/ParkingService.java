@@ -16,7 +16,7 @@ public class ParkingService {
 
     public List<ParkingDTO> getActiveParkingsWithDetails() {
         return repository.findAll().stream()
-                .filter(p -> Boolean.TRUE.equals(p.getActivo()))
+                .filter(p -> p.getActivo() != null && p.getActivo())
                 .map(ProfileMapper::toDTO)
                 .collect(Collectors.toList());
     }

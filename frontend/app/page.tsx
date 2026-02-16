@@ -7,7 +7,7 @@ export default function Home() {
       <section className="grid lg:grid-cols-2 gap-12 items-center py-10">
         <div className="space-y-8">
           <h1 className="text-6xl font-black leading-tight">
-            Gestión de <span className="text-parking-gold">Parkings</span> de Próxima Generación.
+            Bienvenido a <span className="text-parking-gold">Phoenix</span> Parking.
           </h1>
           <p className="text-white/60 text-lg max-w-lg">
             Ahorra tiempo y dinero con nuestro sistema inteligente de abonados. Reconocimiento automático de matrícula y facturación simplificada.

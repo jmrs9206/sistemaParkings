@@ -28,11 +28,20 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 w-full z-50 glass">
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-parking-gold rounded-sm transform rotate-45"></div>
-          <span className="text-xl font-bold tracking-tighter text-parking-gold">
-            JMRS <span className="text-white font-light">PARKINGS</span>
-          </span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-12 h-12 overflow-hidden rounded-full border border-parking-gold/20 group-hover:border-parking-gold/50 transition-all shadow-[0_0_15px_rgba(224,179,76,0.1)]">
+            <img 
+              src="/branding/logo_phoenix.png" 
+              alt="Phoenix Parking Logo" 
+              className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xl font-bold tracking-tighter text-parking-gold leading-none">
+              PHOENIX <span className="text-white font-light">PARKING</span>
+            </span>
+            <span className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-black">Powered by JMRS</span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

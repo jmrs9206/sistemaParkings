@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface AbonadoRepository extends JpaRepository<Abonado, Long> {
+public interface AbonadoRepository extends JpaRepository<Abonado, Integer> {
     Optional<Abonado> findByDniCif(String dniCif);
     Optional<Abonado> findByEmail(String email);
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ParkingRepository extends JpaRepository<Parking, Long> {
+public interface ParkingRepository extends JpaRepository<Parking, Integer> {
     List<Parking> findByActivoTrue();
 }

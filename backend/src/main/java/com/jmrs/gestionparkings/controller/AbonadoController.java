@@ -25,6 +25,7 @@ public class AbonadoController {
     @GetMapping("/{dni}")
     public ResponseEntity<ApiResponse<AbonadoDTO>> getProfile(@PathVariable String dni) {
         return abonadoService.getAbonadoByDni(dni)
+                .map(com.jmrs.gestionparkings.mapper.ProfileMapper::toDTO)
                 .map(dto -> ResponseEntity.ok(ApiResponse.success(dto, "Perfil recuperado")))
                 .orElse(ResponseEntity.status(404).body(ApiResponse.error("Abonado no encontrado")));
     }

@@ -1,20 +1,16 @@
 package com.jmrs.gestionparkings.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "ABONADOS")
-@Getter
-@Setter
 public class Abonado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAbonado;
+    private Integer idAbonado;
 
     @Column(name = "nombre_razon_social", nullable = false)
     private String nombreRazonSocial;
@@ -37,4 +33,24 @@ public class Abonado {
 
     @OneToMany(mappedBy = "abonado")
     private List<DatosPagoAbonado> metodosPago;
+
+    // Getters and Setters
+    public Integer getIdAbonado() { return idAbonado; }
+    public void setIdAbonado(Integer idAbonado) { this.idAbonado = idAbonado; }
+    public String getNombreRazonSocial() { return nombreRazonSocial; }
+    public void setNombreRazonSocial(String nombreRazonSocial) { this.nombreRazonSocial = nombreRazonSocial; }
+    public String getDniCif() { return dniCif; }
+    public void setDniCif(String dniCif) { this.dniCif = dniCif; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public Integer getIdLocalidad() { return idLocalidad; }
+    public void setIdLocalidad(Integer idLocalidad) { this.idLocalidad = idLocalidad; }
+    public Boolean getActivo() { return activo; }
+    public void setActivo(Boolean activo) { this.activo = activo; }
+    public ZonedDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(ZonedDateTime createdAt) { this.createdAt = createdAt; }
+    public List<DatosPagoAbonado> getMetodosPago() { return metodosPago; }
+    public void setMetodosPago(List<DatosPagoAbonado> metodosPago) { this.metodosPago = metodosPago; }
 }

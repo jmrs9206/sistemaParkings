@@ -1,19 +1,15 @@
 package com.jmrs.gestionparkings.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "ESTACIONES")
-@Getter
-@Setter
 public class Estacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEstacion;
+    private Integer idEstacion;
 
     @Column(name = "codigo_estacion", nullable = false, unique = true)
     private String codigoEstacion;
@@ -30,4 +26,18 @@ public class Estacion {
 
     @Column(name = "created_at", insertable = false, updatable = false)
     private ZonedDateTime createdAt;
+
+    // Getters and Setters
+    public Integer getIdEstacion() { return idEstacion; }
+    public void setIdEstacion(Integer idEstacion) { this.idEstacion = idEstacion; }
+    public String getCodigoEstacion() { return codigoEstacion; }
+    public void setCodigoEstacion(String codigoEstacion) { this.codigoEstacion = codigoEstacion; }
+    public String getIdSensor() { return idSensor; }
+    public void setIdSensor(String idSensor) { this.idSensor = idSensor; }
+    public String getEstadoActual() { return estadoActual; }
+    public void setEstadoActual(String estadoActual) { this.estadoActual = estadoActual; }
+    public Zona getZona() { return zona; }
+    public void setZona(Zona zona) { this.zona = zona; }
+    public ZonedDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(ZonedDateTime createdAt) { this.createdAt = createdAt; }
 }
